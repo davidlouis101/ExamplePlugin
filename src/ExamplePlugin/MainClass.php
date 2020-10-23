@@ -24,15 +24,4 @@ class MainClass extends PluginBase{
 	public function onDisable() : void{
 		$this->getLogger()->info(TextFormat::DARK_RED . "I've been disabled!");
 	}
-
-	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
-		switch($command->getName()){
-			case "example":
-				$sender->sendMessage("Hello " . $sender->getName() . "!");
-
-				return true;
-			default:
-				throw new \AssertionError("This line will never be executed");
-		}
-	}
 }
